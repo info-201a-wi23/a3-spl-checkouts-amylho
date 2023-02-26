@@ -3,84 +3,74 @@ title: "A3: SPL Library Checkouts"
 output: html_document
 ---
 
+## Author
+Amy Ho
+
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+> The dataset that I chose focused on items checked out at least ten times a month from 2017 to 2023 by the Seattle Public Library. By analyzing numerous variables, this report explores where trends of titles, subjects, and material types can fall or increase. Collection of checkouts by item type have revealed the rise of Ebook checkouts. Hence, comparing two subjects of fiction and nonfiction display the surge of checkouts and demand for a subject. We can learn about the popularity of titles by the same author throughout the years. Data on titles by certain authors can teach us about reading preferences of various demographics. 
+
+</br>
 
 ### Summary Information
+```{r, echo=FALSE, message=FALSE, code = readLines("summary.R")}
+source("summary.R")
+```
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+> According to the data findings, total fiction checkouts had a total of 5282 checkouts, whereas total nonfiction checkouts had a total of 2548 checkouts. Likewise, the year 2018 had the most total book checkouts of 1,527,112, but the year 2023 had the least total book checkouts of 85,080, a significant decrease in book checkouts. Overall, book checkouts were 6,397,967 and Ebook checkouts were 5,053,218, tying them in close for popularity of material type. Book checkouts remain the most checked out material type despite a decrease checkouts every year. 
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+</br>
 
 ### The Dataset
 
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
+Who collected/published the data?  
 
+> This dataset is from the Seattle Public Library that includes the monthly counts and checkouts by title for different material types. The chosen dataset in this report is for items checked out at least 10 tens a month from 2017 to 2023. 
 
-### First Trends Over Time Chart
+What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+>  The parameters of the data includes twelve columns from usage class between physical or digital, checkout type of horizon or overdrive, material type of books, ebooks, audiobooks, and many more. The range of data is from 2017 to 2023 of each material type. It also includes author names, publishers, and title names. 
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+How was the data collected or generated?  
 
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
+> The data comes from metadata of current and historical sources dating back to 2005 for the main datatset. Digital items come from media vendors such as Overdrive, but data past 2016 is provided by Horizon. Data is refreshed monthly and only counts the initial checkout.
 
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
+Why was the data collected?
 
-Here's an example of how to run an R script inside an RMarkdown file:
+> This data is collected and used as an open data platform to keep track of checkouts by title, but also serves as storing metadata. It is important to collect this data for public access for finding out what to read, transparency, understanding trends, and allows anyone to download it free of charge. 
 
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+What, if any, ethical questions do you need to consider when working with this data?  
+
+> Some ethical questions that can be raised while working with this set is how this data is being used or possibly sold and how there could possibly be a security issue.
+
+What are possible limitations or problems with this data?   (at least 200 words)
+
+> Many limitations and problems arise from the massive number of rows and data points in this collection. The "Creator" column is blank for a large number of the titles. Since digital content is compiled from a wide variety of media sources, without a Horizon record, there is no way to know what each piece is about since they were not recorded. The year publishing (e.g. 2017), year with copyright symbol, printing year, phonograph copyright symbol, publication and copyright date, intervening years, and approximate date among the many possible year formats that can be found in the publication year column. It's also possible that there are gaps, inconsistencies, and security concerns with the data.
+
+</br>
+
+### First Chart Representing Monthly Checkouts by J.R.R. Tolkien of Various Books
+```{r chart 1, echo=FALSE, message=FALSE, warning=FALSE,code= readLines("chart1_tolkien.R")}
+source("chart1_tolkien.R")
 ```
 
-### Second Trends Over Time Chart
+> In this chart, we are looking at number of monthly checkouts of J.R.R. Tolkien books. This is a line plot where the authors most popular titles stay in the same number of checkouts range. We can see in our chart that "The Hobbit" and "The Lord of the Rings, the Fellowship of the Ring" stay in a similar range. Yet, there is a sudden spike in checkouts after the year 2021 and remains in a high trend. 
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+</br>
 
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+### Second Trends Over Time Chart of Fiction and Nonfiction
+```{r, echo=FALSE, message=FALSE, warning=FALSE,code= readLines("chart2_genres.R")}
+source("chart2_genres.R")
 ```
 
-### Your Choice
+> The chart is a representation of fiction versus nonfiction checkouts over the years. While fiction checkouts start at a high quantity of checkouts, there is about a 1000 checkout difference in 2018 and 2020, but nonfiction checkouts dramatically increase in 2021 leaving more than a 2000 checkout gap and suddenly decreases. The two subjects are at an equal amount in late 2021 of roughly 800 checkouts.
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
+</br>
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+### Bar Graph of Material Types from 2017 to 2023
+```{r, echo=FALSE, message=FALSE, warning=FALSE, code= readLines("chart3_bar.R")}
+source("chart3_bar.R")
 ```
 
+> This horizontal bar graph counts the total of checkouts by material item type. The number of book checkouts decrease every year, but ebooks increase every year showing how ebooks have gained popularity and are nearly the same amount as book checkouts.This data can be analyzed to see where item trends start to increase in comparison to other material types. 
 
