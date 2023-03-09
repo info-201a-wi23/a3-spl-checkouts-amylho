@@ -5,7 +5,7 @@ library("ggplot2")
 library("plotly")
 
 # Load in Data
-ten_df <- read.csv("~/Documents/INFO201/a3-spl-checkouts-amylho/2017-2023-10-Checkouts-SPL-Data 2.csv", stringsAsFactors = FALSE)
+ten_df <- read.csv("~/Documents/INFO201/a3-spl-checkouts-amylho/2017-2023-10-Checkouts-SPL-Data 3.csv", stringsAsFactors = FALSE)
 options(dplyr.summarise.inform = FALSE)
 # Fiction versus Nonfiction
 "Fiction" <- ten_df$Subjects[str_detect(ten_df$Subjects, "fiction")]

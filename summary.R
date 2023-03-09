@@ -4,7 +4,7 @@ library("ggplot2")
 
 # Download and unzip one or more of the SPL datasets and load here from a file path
 
-ten_df <- read.csv("~/Documents/INFO201/a3-spl-checkouts-amylho/2017-2023-10-Checkouts-SPL-Data 2.csv", stringsAsFactors = FALSE)
+ten_df <- read.csv("~/Documents/INFO201/a3-spl-checkouts-amylho/2017-2023-10-Checkouts-SPL-Data 3.csv", stringsAsFactors = FALSE)
 
 ten_df <- ten_df %>% mutate(date = paste0(CheckoutYear, "-", CheckoutMonth,  "-01" ))
 ten_df$date <- as.Date(ten_df$date, format = "%Y-%m-%d")
@@ -45,7 +45,7 @@ total_nonfiction <- ten_df %>%
 # What is the average number of checkouts?
 avg_checkouts <- ten_df %>%
  select(Checkouts) %>%
-  summarize(Checkouts = mean(Checkouts)) 
+  summarize(Checkouts = mean(Checkouts))
     
 
 # Calculate the total number of checkouts by item type over the years
@@ -57,7 +57,7 @@ top_checkouts_item <- ten_df %>%
 
 # Material type checkouts filtered
 material_checkouts_filtered <- top_checkouts_item %>%
-  filter(MaterialType %in% c("AUDIOBOOK", "BOOK", "EBOOK", "SOUNDDISC", "VIDEODISC")) 
+  filter(MaterialType %in% c("AUDIOBOOK", "BOOK", "EBOOK", "SOUNDDISC", "VIDEODISC"))
 
 # Total book checkouts
 total_book_checkout <- ten_df %>%
@@ -65,11 +65,24 @@ total_book_checkout <- ten_df %>%
   group_by(MaterialType, CheckoutYear) %>%
   summarize(Checkouts = sum(Checkouts))
 
+# Sum total book checkouts
+sum_book <- ten_df %>%
+  filter(MaterialType %in% c("BOOK")) %>%
+  summarize(Checkouts = sum(Checkouts))
+
+  
+
 # Total Ebook checkouts
 total_ebook_checkout <- ten_df %>%
   filter(MaterialType %in% c("EBOOK")) %>%
   group_by(MaterialType, CheckoutYear) %>%
   summarize(Checkouts = sum(Checkouts))
+
+# Sum total Ebook checkouts
+sum_ebook <- ten_df %>%
+  filter(MaterialType %in% c("EBOOK")) %>%
+  summarize(Checkouts = sum(Checkouts))
+
 
 # What is the year with the least checkouts for books?
 least_book_checkout <- ten_df %>%
@@ -91,7 +104,7 @@ most_book_checkout <- ten_df %>%
 total_book_each_year<- ten_df %>%
   filter(MaterialType %in% c("BOOK")) %>%
   group_by(MaterialType, CheckoutYear) %>%
-  summarize(sum_book_checkouts = sum(Checkouts)) 
+  summarize(sum_book_checkouts = sum(Checkouts))
   
 
 # What are the total checked out books in 2017?

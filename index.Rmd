@@ -17,7 +17,7 @@ Amy Ho
 source("summary.R")
 ```
 
-> According to the data findings, total fiction checkouts had a total of 5282 checkouts, whereas total nonfiction checkouts had a total of 2548 checkouts. Likewise, the year 2018 had the most total book checkouts of 1,527,112, but the year 2023 had the least total book checkouts of 85,080, a significant decrease in book checkouts. Overall, book checkouts were 6,397,967 and Ebook checkouts were 5,053,218, tying them in close for popularity of material type. Book checkouts remain the most checked out material type despite a decrease checkouts every year. 
+> According to the data findings, total fiction checkouts had a total of 'r total_fiction' (5282) checkouts, whereas total nonfiction checkouts had a total of 'r total_nonfiction' (2548) checkouts. Likewise, the year 2018 had the most total book checkouts of 'r most_book_checkout' (1,527,112), but the year 2023 had the least total book checkouts of 'r least_book_checkout' (85,080), a significant decrease in book checkouts. Overall, book checkouts were 'r sum_book' (6,397,967) and Ebook checkouts were 'r sum_ebook' (5,053,218), tying them in close for popularity of material type. Book checkouts remain the most checked out material type despite a decrease checkouts every year. 
 
 </br>
 
@@ -45,7 +45,7 @@ What, if any, ethical questions do you need to consider when working with this d
 
 What are possible limitations or problems with this data?   (at least 200 words)
 
-> Many limitations and problems arise from the massive number of rows and data points in this collection. The "Creator" column is blank for a large number of the titles. Since digital content is compiled from a wide variety of media sources, without a Horizon record, there is no way to know what each piece is about since they were not recorded. The year publishing (e.g. 2017), year with copyright symbol, printing year, phonograph copyright symbol, publication and copyright date, intervening years, and approximate date among the many possible year formats that can be found in the publication year column. It's also possible that there are gaps, inconsistencies, and security concerns with the data.
+> Many limitations and problems arise from the massive number of rows and data points in this collection. The "Creator" column is blank for a large number of the titles. Since digital content is compiled from a wide variety of media sources, without a Horizon record, there is no way to know what each piece is about since they were not recorded. The year publishing (e.g. 2017), year with copyright symbol, printing year, phonograph copyright symbol, publication and copyright date, intervening years, and approximate date among the many possible year formats that can be found in the publication year column. It's also possible that there are gaps, inconsistencies, and security concerns with the data.
 
 </br>
 
@@ -54,7 +54,7 @@ What are possible limitations or problems with this data?   (at least 200 words)
 source("chart1_tolkien.R")
 ```
 
-> In this chart, we are looking at number of monthly checkouts of J.R.R. Tolkien books. This is a line plot where the authors most popular titles stay in the same number of checkouts range. We can see in our chart that "The Hobbit" and "The Lord of the Rings, the Fellowship of the Ring" stay in a similar range. Yet, there is a sudden spike in checkouts after the year 2021 and remains in a high trend. 
+> In this chart, we are looking at number of monthly checkouts of J.R.R. Tolkien books. This is a line plot where the authors most popular titles stay in the same number of checkouts range. We can see in our chart that "The Hobbit" and "The Lord of the Rings, the Fellowship of the Ring" stay in a similar range. Yet, there is a sudden spike in checkouts after the year 2021 and remains in a high trend. The purpose of this chart allows us to understand the trend of books by author J.R.R. Tolkien and when popularity emerges due to a spike. Additionally, this chart identifies when "The Hobbit" becomes popular and visually seeing an odd occurence of high checkouts. A line chart shows an upward trend of "The Hobbit" in a certain time period whereas the other trend lines generally remain in the same level. These trends are in the same time period and put into a line plot as the number of checkouts are not large and there are smaller changes.
 
 </br>
 
@@ -63,7 +63,7 @@ source("chart1_tolkien.R")
 source("chart2_genres.R")
 ```
 
-> The chart is a representation of fiction versus nonfiction checkouts over the years. While fiction checkouts start at a high quantity of checkouts, there is about a 1000 checkout difference in 2018 and 2020, but nonfiction checkouts dramatically increase in 2021 leaving more than a 2000 checkout gap and suddenly decreases. The two subjects are at an equal amount in late 2021 of roughly 800 checkouts.
+> The chart is a representation of fiction versus nonfiction checkouts over the years. While fiction checkouts start at a high quantity of checkouts, there is about a 1000 checkout difference in 2018 and 2020, but nonfiction checkouts dramatically increase in 2021 leaving more than a 2000 checkout gap and suddenly decreases. The two subjects are at an equal amount in late 2021 of roughly 800 checkouts. This chart allows us to visually compare fiction and nonfiction checkouts despite the numbers given. Without this chart, you would not be able to see that fiction checkouts dropped and nonfiction checkouts increased. We are able to visualize the trends of fiction checkouts falling whereas nonfiction trends have a sudden spike and drop. The trend shows that as fiction decreases, nonfiction increases. A line chart is chosen because it is able to display small clear changes of trends over time between two genres to make predictions about genre popularity.
 
 </br>
 
@@ -72,5 +72,5 @@ source("chart2_genres.R")
 source("chart3_bar.R")
 ```
 
-> This horizontal bar graph counts the total of checkouts by material item type. The number of book checkouts decrease every year, but ebooks increase every year showing how ebooks have gained popularity and are nearly the same amount as book checkouts.This data can be analyzed to see where item trends start to increase in comparison to other material types. 
+> This horizontal bar graph counts the total of checkouts by material item type. The number of book checkouts decrease every year, but ebooks increase every year showing how ebooks have gained popularity and are nearly the same amount as book checkouts.This data can be analyzed to see where item trends start to increase in comparison to other material types. The purpose of this graph allows us to see separated bars of material type of checkouts from 2017 from bottom to top. Hence, if we follow the trend from the bottom of the graph to the top, we can see the direction of material types changing over time and helps us predict when an item type is developing. We can see that ebooks are gradually catching up to book checkouts. A bar graph makes it easy to compare between material type in the dataset, where the y-axis represents material types and the x-axis represents total number of checkouts over time. A horizontal bar graph allows room to see labels on the y-axis and is effective for larger numbers and changes. Thus, we are able to compare several categories and be able to identify trends of popularity of material type. 
 

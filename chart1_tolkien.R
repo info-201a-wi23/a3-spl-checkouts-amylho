@@ -8,7 +8,7 @@ library("tidyverse")
 
 # Download and unzip one or more of the SPL datasets and load here from a file path
 
-ten_df <- read.csv("~/Documents/INFO201/a3-spl-checkouts-amylho/2017-2023-10-Checkouts-SPL-Data 2.csv", stringsAsFactors = FALSE)
+ten_df <- read.csv("~/Documents/INFO201/a3-spl-checkouts-amylho/2017-2023-10-Checkouts-SPL-Data 3.csv", stringsAsFactors = FALSE)
 ten_df <- ten_df %>% mutate(date = paste0(CheckoutYear, "-", CheckoutMonth,  "-01" ))
 ten_df$date <- as.Date(ten_df$date, format = "%Y-%m-%d")
 # Drop summarise groups
