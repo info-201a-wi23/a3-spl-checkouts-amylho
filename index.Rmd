@@ -17,7 +17,7 @@ Amy Ho
 source("summary.R")
 ```
 
-> According to the data findings, total fiction checkouts had a total of 'r total_fiction' (5282) checkouts, whereas total nonfiction checkouts had a total of 'r total_nonfiction' (2548) checkouts. Likewise, the year 2018 had the most total book checkouts of 'r most_book_checkout' (1,527,112), but the year 2023 had the least total book checkouts of 'r least_book_checkout' (85,080), a significant decrease in book checkouts. Overall, book checkouts were 'r sum_book' (6,397,967) and Ebook checkouts were 'r sum_ebook' (5,053,218), tying them in close for popularity of material type. Book checkouts remain the most checked out material type despite a decrease checkouts every year. 
+> According to the data findings, total fiction checkouts had a total of `r total_fiction` (5282) checkouts, whereas total nonfiction checkouts had a total of `r total_nonfiction` (2548) checkouts. Likewise, the year 2018 had the most total book checkouts of `r most_book_checkout` (1,527,112), but the year 2023 had the least total book checkouts of `r least_book_checkout` (85,080), a significant decrease in book checkouts. Overall, book checkouts were `r sum_book` (6,397,967) and Ebook checkouts were `r sum_ebook` (5,053,218), tying them in close for popularity of material type. Book checkouts remain the most checked out material type despite a decrease checkouts every year. 
 
 </br>
 
